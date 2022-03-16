@@ -105,9 +105,9 @@ jobs:
         uses: actions/upload-artifact@v2
       env:
         GITHUB_TOKEN: ${{ secrets.small }}
-#        name: recoveryzip
-#        path: work/out/target/product/*/*.zip
+        name: recoveryimage
+        path: work/out/target/product/*/recovery.img
 
-name2: recoveryimage
-    path: work/out/target/product/*/*.img
+          #name2: recoveryimage
+          #path: work/out/target/product/*/*.img
 
