@@ -91,7 +91,7 @@ jobs:
       run: |
 
         cd ${{ steps.pwd.outputs.pwd }}
-        export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch omni_pokerp-eng; mka recoveryimage -j$(nproc --all)
+        export ALLOW_MISSING_DEPENDENCIES=true; source build/envsetup.sh; lunch omni_pokerp-eng; mka recoveryimage -j$(nproc --all)
 
 
     - name: Upload to Release
@@ -106,8 +106,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.small }}
 #        name: recoveryzip
-        path: work/out/target/product/*/*.zip
+#        path: work/out/target/product/*/*.zip
 
-#name2: recoveryimage
-#    path: work/out/target/product/*/*.img
+name2: recoveryimage
+    path: work/out/target/product/*/*.img
 
