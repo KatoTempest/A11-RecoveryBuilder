@@ -1,4 +1,4 @@
-name: Make Custom Recovery 11
+name: Make Custom Recovery 9.0
 
 on:
   workflow_dispatch:
@@ -6,31 +6,31 @@ on:
       LIBRARY_NAME:
         description: 'LIBRARY_NAME'
         required: true
-        default: 'twrp'
+        default: 'omni'
       LIBRARY_URL:
         description: 'LIBRARY_URL'
         required: true
-        default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git'
+        default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git'
       LIBRARY_BRANCH:
         description: 'LIBRARY_BRANCH'
         required: true
-        default: 'twrp-11'
+        default: 'twrp-9.0'
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/SmallPP420/A11-Tests'
+        default: 'https://github.com/KatoTempest/motorola_pokerp.git'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
-        default: 'main'
+        default: 'old-blobs'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/nokia/Wasp'
+        default: 'device/motorola/pokerp'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'Wasp'
+        default: 'pokerp'
 
 jobs:
   build:
@@ -70,8 +70,8 @@ jobs:
         mkdir workspace
         cd workspace
         echo "::set-output name=pwd::$(pwd)"
-        git config --global user.name "lopestorm"
-        git config --global user.email "lopestom1@gmail.com"
+        git config --global user.name "KatoTempest"
+        git config --global user.email "reftlight@hotmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.LIBRARY_URL }} -b ${{ github.event.inputs.LIBRARY_BRANCH }}
       id: pwd
           
